@@ -4,11 +4,10 @@
 
 using namespace std;
 
-class fecha{
+class fecha
+{
 private:
-	int anio;
-	int mes;
-	int dia;
+	int anio,mes,dia;
 	
 public:
 	fecha(int, int, int);
@@ -17,29 +16,33 @@ public:
 	
 };
 
-fecha::fecha(int _anio, int _mes, int _dia){
+fecha::fecha(int _anio, int _mes, int _dia)
+{
 	anio=_anio;
 	mes=_mes;
 	dia=_dia;	
 }
 
-fecha::fecha(long Fecha){
+fecha::fecha(long Fecha)
+{
 	anio=int(Fecha/10000);
 	mes =int((Fecha-anio*10000)/100);
 	dia=int(Fecha-anio*10000-mes*100);
 }
 
-void fecha::mostrar(){
-	cout<<anio<<"/"<<mes<<"/"<<dia<<endl;
+void fecha::mostrar()
+{
+	cout<<dia<<"/"<<mes<<"/"<<anio<<endl;
 }
 	
-int main(){
+int main()
+{
 	int fechar;
 	cout<<"Bienvenido digite la fecha como el ejemplo: yyyymmdd"<<endl;
-	cout<<"Digite el anio mes y dia: s";
+	cout<<"Digite el anio, mes y dia: ";
 	cin>>fechar;
 	
-	fecha f1(fechar);
+	fecha f1(2003,6,9);
 	fecha fe(fechar);
 	fe.mostrar();
 	f1.mostrar();
