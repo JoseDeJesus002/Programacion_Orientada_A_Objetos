@@ -1,0 +1,73 @@
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+class persona{
+private:
+	string nombre;
+	int edad;
+public:
+	persona(string,int);
+	void mostrar();
+};
+persona::persona(string nombre_,int edad_)
+	nombre=nombre_;
+	edad=edad_;
+}
+void persona::mostrar(){
+	cout<<"nombre: "<<nombre<<endl;
+	cout<<"edad: "<<edad<<endl;
+}
+
+class empleado:public persona{
+private:
+	float sueldo;
+public:
+	empleado(string,int,float);
+	void mostraremp();
+};
+empleado::empleado(string nombre_,int edad_,float sueldo_):persona(nombre_,edad_){
+	sueldo=sueldo_;
+}
+
+void empleado::mostraremp(){
+	mostrar();
+	cout<<"sueldo: "<<sueldo<<endl;
+}
+class director:public persona{
+private:
+	string area;
+	int antiguedad;
+public:
+	director(string,int,string,int);
+	void mostrar1();
+};
+director::director(string nombre_,int edad_,string area_,int antiguedad_):persona(nombre_,edad_){
+	area=area_;
+	antiguedad=antiguedad_;
+}
+
+void director::mostrar1(){
+	cout<<"El area es: "<<area<<endl;
+	cout<<"La antiguedad es: "<<antiguedad<<" anios"<<endl;
+}
+
+// director y empleado 
+
+int main(){
+persona p1("Juan",32);
+p1.mostrar();
+
+empleado a1("Andres",53,18000);
+a1.mostraremp();
+
+director a2("Mariana",49,"Ventas",15);
+a2.mostrar1();
+
+// 
+
+system("pause");
+	
+	return 0;
+}
+
