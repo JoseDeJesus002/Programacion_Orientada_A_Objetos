@@ -1,0 +1,57 @@
+#include <iostream>
+#include<stdio.h>
+#include <math.h>
+using namespace std;
+
+class figuras
+{
+private:
+	int altura;
+public:
+	figuras(int);
+	void resultado();
+};
+
+figuras::figuras(int altura_)
+{
+	altura=altura_;
+}
+void figuras::resultado(){
+	float alt;
+	alt=altura;
+}
+class cilindro:public figuras
+{
+private:
+	float radio;
+public:
+	cilindro(int,float);
+void operacion();
+//void resultado1();
+};
+
+cilindro::cilindro(int altura_,float radio_):figuras(altura_){
+	radio=radio_;
+}
+
+void cilindro::operacion()
+{
+	float _area;
+	_area = 3.14 pow(radio,2);
+	
+	cout<<"El volumen es: "<<_area<<endl;
+}
+
+int main() {
+	
+	cilindro c1(8,15*8);
+	c1.operacion();
+	
+	
+	
+	
+	
+	
+	return 0;
+}
+
