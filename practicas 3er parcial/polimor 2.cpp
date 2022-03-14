@@ -106,8 +106,6 @@ void circulo::area(){
 	cout<<"El area del circulo es: "<<area_<<endl;
 }
 
-
-
 int main(){
 	figura *conjunto[3];
 	conjunto[0]= new cuadrado(20);
