@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class secretario : public empleado {
+class secretario:public empleado {
 	private:
 		string nDespacho;
 		string fax;	
